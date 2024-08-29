@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Store</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo" class="logo-img">
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#products">Products</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/hero-iphone.jpg" alt="Hero Image">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h2 class="typewriter">Welcome to the Apple Store</h2>
+                <p>Explore our exclusive collection of the latest iPhone models with special offers and unbeatable prices. Be among the first to own the newest innovations and enjoy exceptional deals tailored just for you!</p>
+                <a href="#products" class="btn btn-primary">View Products</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content Area -->
+    <main class="container my-5">
+        <section id="products">
+            <h2 class="text-center mb-4">Our Products</h2>
+            <div class="row mb-4">
+                <!-- Filters -->
+                <div class="col-md-3">
+                    <h4>Filters</h4>
+                    <div class="mb-3">
+                        <label for="filter-price" class="form-label">Price</label>
+                        <select id="filter-price" class="form-select">
+                            <option value="all">All Prices</option>
+                            <option value="0-5000">Up to R5,000</option>
+                            <option value="5000-10000">R5,000 - R10,000</option>
+                            <option value="10000-15000">R10,000 - R15,000</option>
+                            <option value="15000-20000">R15,000 - R20,000</option>
+                            <option value="20000">Above R20,000</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="filter-model" class="form-label">Model</label>
+                        <select id="filter-model" class="form-select">
+                            <option value="all">All Models</option>
+                            <option value="iPhone 13">iPhone 13</option>
+                            <option value="iPhone 14">iPhone 14</option>
+                            <option value="iPhone 15">iPhone 15</option>
+                            <option value="iPhone SE">iPhone SE</option>
+                            <option value="iPhone XR">iPhone XR</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="filter-category" class="form-label">Category</label>
+                        <select id="filter-category" class="form-select">
+                            <option value="all">All Categories</option>
+                            <option value="smartphone">Smartphones</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="cables">Cables</option>
+                            <option value="chargers">Chargers</option>
+                            <option value="headphones">Headphones</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Product Listings -->
+                <div class="col-md-9">
+                    <div class="row">
+                        <!-- iPhone 13 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="12999" data-model="iPhone 13" data-category="smartphone">
+                                <img src="images/iphone-13.jpg" class="card-img-top" alt="iPhone 13">
+                             <div class="card-body">
+                                    <h5 class="card-title">iPhone 13</h5>
+                                    <p class="card-text">R12,999.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.5 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- iPhone 14 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="14999" data-model="iPhone 14" data-category="smartphone">
+                                <img src="images/iphone-14.jpg" class="card-img-top" alt="iPhone 14">
+                                <div class="card-body">
+                                    <h5 class="card-title">iPhone 14</h5>
+                                    <p class="card-text">R14,999.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.7 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- iPhone 15 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="16999" data-model="iPhone 15" data-category="smartphone">
+                                <img src="images/iphone-15.jpg" class="card-img-top" alt="iPhone 15">
+                                <div class="card-body">
+                                    <h5 class="card-title">iPhone 15</h5>
+                                    <p class="card-text">R16,999.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.8 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- iPhone SE -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="8999" data-model="iPhone SE" data-category="smartphone">
+                                <img src="images/iphone-se.jpg" class="card-img-top" alt="iPhone SE">
+                                <div class="card-body">
+                                    <h5 class="card-title">iPhone SE</h5>
+                                    <p class="card-text">R8,999.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.3 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- iPhone XR -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="10999" data-model="iPhone XR" data-category="smartphone">
+                                <img src="images/iPhone-XR.jpg" class="card-img-top" alt="iPhone XR">
+                                <div class="card-body">
+                                    <h5 class="card-title">iPhone XR</h5>
+                                    <p class="card-text">R10,999.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.6 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Charger -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="299" data-model="Charger" data-category="chargers">
+                                <img src="images/charger.jpg" class="card-img-top" alt="Charger">
+                                <div class="card-body">
+                                    <h5 class="card-title">Charger</h5>
+                                    <p class="card-text">R299.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.2 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cable -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="149" data-model="Cable" data-category="cables">
+                                <img src="images/cable.jpg" class="card-img-top" alt="Cable">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cable</h5>
+                                    <p class="card-text">R149.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.4 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Headphones -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="799" data-model="Headphones" data-category="headphones">
+                                <img src="images/headphone.jpg" class="card-img-top" alt="Headphones">
+                                <div class="card-body">
+                                    <h5 class="card-title">Headphones</h5>
+                                    <p class="card-text">R799.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.6 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card product-card" data-price="399" data-model="Power Bank" data-category="powerbanks">
+                                <img src="images/power-bank.jpg" class="card-img-top" alt="Power Bank">
+                                <div class="card-body">
+                                    <h5 class="card-title">Power Bank</h5>
+                                    <p class="card-text">R399.00</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">4.3 ★</span>
+                                        <button class="btn btn-primary add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cart-modal-body">
+                    Your cart is empty.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <section id="contact" class="container my-5">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <form action="submit_form.php" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3">
+        <p>Contact us at <a href="mailto:nempumbulunilusani@gmail.com">nempumbulunilusani@gmail.com</a> | Phone: 0766003246</p>
+        <p>&copy; 2024 Apple Store | Nempumbuluni Lusani Judith</p>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
